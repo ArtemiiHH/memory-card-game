@@ -1,9 +1,23 @@
-body,
-html {
+body {
   margin: 0;
-  background-color: rgb(114, 192, 255);
 }
 
-* {
-  box-sizing: border-box;
+header,
+footer {
+  text-align: center;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Section */
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

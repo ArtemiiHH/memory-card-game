@@ -1,1 +1,3 @@
-export default function StartScreen() {}
+export default function StartScreen() {
+  return <main>Section</main>;
+}
