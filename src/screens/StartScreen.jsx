@@ -1,5 +1,3 @@
-import imageMain from "../assets/geography.png";
-
 export default function StartScreen() {
   return (
     <div className="start-screen-button-group">

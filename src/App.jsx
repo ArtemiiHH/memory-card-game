@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./styles/App.css";
+import backgroundImage from "../src/assets/background-image.svg";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StartScreen from "./screens/StartScreen";
