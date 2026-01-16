@@ -1,6 +1,9 @@
 import { useState } from "react";
-import "./App.css";
+import "./styles/App.css";
+import StartScreen from "./screens/StartScreen";
 
-function App() {}
+function App() {
+  return <StartScreen></StartScreen>;
+}
 
 export default App;
