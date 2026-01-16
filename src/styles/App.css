@@ -1,0 +1,9 @@
+body,
+html {
+  margin: 0;
+  background-color: rgb(114, 192, 255);
+}
+
+* {
+  box-sizing: border-box;
+}
