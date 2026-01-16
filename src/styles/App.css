@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap");
+
 body {
   margin: 0;
+  background-color: rgb(82, 197, 255);
+  font-family: "Jersey 10", sans-serif;
 }
 
 header,
@@ -20,4 +24,9 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.start-screen-button-group {
+  display: flex;
+  flex-direction: column;
 }
