@@ -67,5 +67,8 @@ footer {
 
 /* Start Screen Buttons */
 .start-screen-modal button {
-  padding: 30px 100px;
+  padding: 20px 80px;
+  border: 1px solid black;
+  font-family: "Jersey 10", sans-serif;
+  font-size: 1.7rem;
 }
