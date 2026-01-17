@@ -13,6 +13,20 @@ footer {
   backdrop-filter: blur(10px);
 }
 
+/* Game Title */
+.game-title {
+  font-size: 3.5rem;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 1.3rem;
+  padding: 20px;
+  margin: 0;
+}
+
 /* Whole App Container */
 .app-container {
   min-height: 100vh;
