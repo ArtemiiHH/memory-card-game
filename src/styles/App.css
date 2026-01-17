@@ -6,16 +6,23 @@ body {
   font-family: "Jersey 10", sans-serif;
 }
 
+/* Header/Footer */
 header,
 footer {
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
-/* App Container */
+/* Whole App Container */
 .app-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  /* Background Image */
+  background-image: url("../assets/background-image2.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* Main Section */
@@ -26,7 +33,13 @@ footer {
   align-items: center;
 }
 
-.start-screen-button-group {
+.start-screen-modal {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  padding: 30px;
+}
+.start-screen-modal button {
+  padding: 30px 100px;
 }
