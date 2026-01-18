@@ -1,6 +1,6 @@
 import Main from "./Main";
 
-export default function StartScreen({ loadLoadingScreen, startGame }) {
+export default function StartScreen({ startGame }) {
   // Difficulty levels
   const level = [
     {
@@ -14,9 +14,11 @@ export default function StartScreen({ loadLoadingScreen, startGame }) {
     <div className="start-screen-modal">
       <h2 className="start-screen-text">Select difficulty level:</h2>
 
-      <button onClick={startGame}>Easy</button>
-      <button onClick={level.medium}>Medium</button>
-      <button onClick={level.hard}>Hard</button>
+      <button type={level.easy}>
+        Easy
+      </button>
+      <button type={level.medium}>Medium</button>
+      <button type={level.hard}>Hard</button>
     </div>
   );
 }
