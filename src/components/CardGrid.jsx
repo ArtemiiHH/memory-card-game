@@ -13,8 +13,6 @@ export default function CardGrid() {
       const countries = await getCountries();
       // Store resolved data
       setListCountries(countries);
-
-      console.log("countries:", countries);
     }
 
     fetchCountries();

@@ -84,16 +84,27 @@ footer {
 
 /* Card */
 .card {
-  background-color: white;
-  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  height: 180px;
   width: 120px;
   padding: 30px;
 }
 
 /* Country Image */
 .country-image {
+  height: 80px;
+  width: auto;
 }
 
 /* Country Name */
 .country-name {
+  margin: 0;
+  padding: 20px;
+  font-size: 1.7rem;
 }
