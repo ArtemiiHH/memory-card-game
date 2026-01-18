@@ -3,6 +3,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import StartScreen from "./screens/StartScreen";
+import Main from "./screens/Main";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Header></Header>
 
       <main className="app-main">
-        <StartScreen></StartScreen>
+        <Main></Main>
       </main>
 
       <Footer></Footer>

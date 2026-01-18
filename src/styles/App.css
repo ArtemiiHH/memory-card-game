@@ -72,3 +72,20 @@ footer {
   font-family: "Jersey 10", sans-serif;
   font-size: 1.7rem;
 }
+
+/* Card Grid */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background-color: white;
+  height: 200px;
+  width: 120px;
+  padding: 30px;
+}
