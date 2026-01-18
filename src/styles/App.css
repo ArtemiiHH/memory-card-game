@@ -110,15 +110,15 @@ footer {
 }
 
 /* Loading Screen */
-  .loading-screen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 
-  /* Loading Animation */
+/* Loading Animation */
 .globe-image {
   height: 150px;
   animation-name: spin;
@@ -127,11 +127,13 @@ footer {
   animation-iteration-count: infinite;
 }
 
+/* Loading Text */
 .loading-text {
   margin: 0;
   font-size: 3rem;
 }
 
+/* Spin Animation */
 @keyframes spin {
   from {
     transform: rotate(0deg);

@@ -12,7 +12,7 @@ function App() {
       <Header></Header>
 
       <main className="app-main">
-        <LoadingScreen></LoadingScreen>
+        <StartScreen></StartScreen>
       </main>
 
       <Footer></Footer>
