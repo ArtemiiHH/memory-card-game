@@ -1,8 +1,8 @@
-export default function Card() {
+export default function Card({ name, image }) {
   return (
     <div className="card">
-      <img src="" alt="" />
-      <h3>Albania</h3>
+      <img src={image} />
+      <h3>{name}</h3>
     </div>
   );
 }
