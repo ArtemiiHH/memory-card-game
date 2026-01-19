@@ -96,10 +96,10 @@ footer {
   padding: 30px;
 }
 
-/* Country Image */
-.country-image {
+/* Country Flag */
+.country-flag {
   height: 80px;
-  width: auto;
+  width: 120px;
 }
 
 /* Country Name */

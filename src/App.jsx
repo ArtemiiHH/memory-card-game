@@ -48,7 +48,9 @@ function App() {
         )}
 
         {/* Load Loading Screen */}
-        {currentScreen === "loading" && !countriesList.length && <LoadingScreen></LoadingScreen>}
+        {currentScreen === "loading" && !countriesList.length && (
+          <LoadingScreen></LoadingScreen>
+        )}
 
         {/* Load Main Game Screen */}
         {currentScreen === "loading" && countriesList.length !== 0 && (
