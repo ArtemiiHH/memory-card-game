@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -9,13 +9,31 @@ import { getCountries } from "./data/fetchApi";
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
+  const [countriesList, setCountriesList] = useState([]);
 
-  // Change screens
+  // Change screen from Start to Loading
   function changeScreen() {
     if (currentScreen === "start") {
       setCurrentScreen("loading");
     }
   }
+
+  // Fetch countries
+  useEffect(() => {
+    // Fetch only if current is Loading Screen
+    if (currentScreen === "loading") {
+      // Timeout of 2 secs
+      setTimeout(() => {
+        // Fetch countries
+        async function fetchCountries() {
+          const countries = await getCountries();
+          setCountriesList(countries);
+        }
+
+        fetchCountries();
+      }, 2000); // <-- 2000ms Timer
+    }
+  }, [currentScreen]); // <-- Dependency Array
 
   return (
     <div className="app-container">
@@ -24,16 +42,18 @@ function App() {
 
       {/* Main Section Screens */}
       <main className="app-main">
-        {/* Start Screen */}
+        {/* Load Start Screen */}
         {currentScreen === "start" && (
           <StartScreen changeScreen={changeScreen}></StartScreen>
         )}
 
-        {/* Loading Screen */}
+        {/* Load Loading Screen */}
         {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
 
-        {/* Main Game Screen */}
-        {currentScreen === "game" && <Main></Main>}
+        {/* Load Main Game Screen */}
+        {currentScreen === "loading" && countriesList.length !== 0 && (
+          <Main countriesList={countriesList}></Main>
+        )}
       </main>
 
       {/* Footer */}
