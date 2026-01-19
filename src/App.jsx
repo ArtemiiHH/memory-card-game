@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import StartScreen from "./screens/StartScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
+import { getCountries } from "./data/fetchApi";
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
@@ -13,8 +14,6 @@ function App() {
   function changeScreen() {
     if (currentScreen === "start") {
       setCurrentScreen("loading");
-    } else if (currentScreen === "loading") {
-      setCurrentScreen("game");
     }
   }
 
@@ -23,7 +22,7 @@ function App() {
       {/* Header */}
       <Header></Header>
 
-      {/* Main Section */}
+      {/* Main Section Screens */}
       <main className="app-main">
         {/* Start Screen */}
         {currentScreen === "start" && (
