@@ -7,11 +7,10 @@ import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
 
 function App() {
-  const [hasGameStarted, setHasGameStarted] = useState(false);
-  const [currentPage, setCurrentPage] = useState("start");
+  const [currentScreen, setCurrentScreen] = useState("start");
 
-  function startGame() {
-    setHasGameStarted(true);
+  function changeScreen() {
+    setCurrentScreen("loading");
   }
 
   return (
@@ -19,7 +18,13 @@ function App() {
       <Header></Header>
 
       <main className="app-main">
-        <StartScreen startGame={startGame}></StartScreen>
+        {currentScreen === "start" && (
+          <StartScreen changeScreen={changeScreen}></StartScreen>
+        )}
+
+        {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
+
+        {currentScreen === "game" && <Main></Main>}
       </main>
 
       <Footer></Footer>
