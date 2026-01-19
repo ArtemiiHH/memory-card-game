@@ -31,7 +31,7 @@ function App() {
         }
 
         fetchCountries();
-      }, 2000); // <-- 2000ms Timer
+      }, 1000); // <-- 1000ms Timer
     }
   }, [currentScreen]); // <-- Dependency Array
 
@@ -48,7 +48,7 @@ function App() {
         )}
 
         {/* Load Loading Screen */}
-        {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
+        {currentScreen === "loading" && !countriesList.length && <LoadingScreen></LoadingScreen>}
 
         {/* Load Main Game Screen */}
         {currentScreen === "loading" && countriesList.length !== 0 && (
