@@ -10,7 +10,11 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
 
   function changeScreen() {
-    setCurrentScreen("loading");
+    if (currentScreen === "start") {
+      setCurrentScreen("loading");
+    } else if (currentScreen === "loading") {
+      setCurrentScreen("game");
+    }
   }
 
   return (
