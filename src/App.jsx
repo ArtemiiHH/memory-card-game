@@ -14,6 +14,7 @@ function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
   const [countriesList, setCountriesList] = useState([]);
   const [difficulty, setDifficulty] = useState("");
+  const [cardsToRender, setCardsToRender] = useState([]);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -23,6 +24,11 @@ function App() {
 
     // Store difficulty value
     setDifficulty(value);
+  }
+
+  function roundShuffle() {
+    const result = [...countriesList].sort(() => Math.random() - 0.5);
+    setCardsToRender(result);
   }
 
   // Fetch countries
@@ -44,6 +50,10 @@ function App() {
       }, 1000); // <-- 1000ms Timer
     }
   }, [currentScreen]); // <-- Dependency Array
+
+  useEffect(() => {
+    roundShuffle();
+  }, []); // <-- Dependency Array
 
   return (
     <div className="app-container">
