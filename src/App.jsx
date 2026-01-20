@@ -7,15 +7,22 @@ import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
 import { getCountries } from "./data/fetchApi";
 
+// TODO:
+// REMOVE TIMER LATER IN PRODUCTION
+
 function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
   const [countriesList, setCountriesList] = useState([]);
+  const [difficulty, setDifficulty] = useState("");
 
   // Change screen from Start to Loading
-  function changeScreen() {
+  function changeScreen(value) {
     if (currentScreen === "start") {
       setCurrentScreen("loading");
     }
+
+    // Store difficulty value
+    setDifficulty(value);
   }
 
   // Fetch countries
@@ -28,6 +35,9 @@ function App() {
         async function fetchCountries() {
           const countries = await getCountries();
           setCountriesList(countries);
+
+          // Change screen to Game
+          setCurrentScreen("game");
         }
 
         fetchCountries();
@@ -53,7 +63,7 @@ function App() {
         )}
 
         {/* Load Main Game Screen */}
-        {currentScreen === "loading" && countriesList.length !== 0 && (
+        {currentScreen === "game" && countriesList.length !== 0 && (
           <Main countriesList={countriesList}></Main>
         )}
       </main>
