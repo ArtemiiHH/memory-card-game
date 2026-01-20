@@ -1,20 +1,4 @@
-import { useState } from "react";
-import Main from "./Main";
-
 export default function StartScreen({ changeScreen }) {
-  // Difficulty Level
-  const [difficulty, setDifficulty] = useState("");
-
-  function changeDifficulty() {
-    if (difficulty === "easy") {
-      setDifficulty("easy");
-    } else if (difficulty === "medium") {
-      setDifficulty("medium");
-    } else {
-      setDifficulty("hard");
-    }
-  }
-
   return (
     // Start Screen Modal
     <div className="start-screen-modal">
@@ -23,8 +7,8 @@ export default function StartScreen({ changeScreen }) {
 
       {/* Start Screen Buttons */}
       <button onClick={changeScreen}>Easy</button>
-      <button>Medium</button>
-      <button>Hard</button>
+      <button onClick={changeScreen}>Medium</button>
+      <button onClick={changeScreen}>Hard</button>
     </div>
   );
 }

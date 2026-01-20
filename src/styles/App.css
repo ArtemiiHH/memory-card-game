@@ -96,10 +96,14 @@ footer {
   padding: 30px;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 /* Country Flag */
 .country-flag {
   height: 80px;
-  width: 120px;
+  width: 130px;
 }
 
 /* Country Name */
