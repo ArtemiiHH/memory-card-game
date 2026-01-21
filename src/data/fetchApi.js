@@ -13,5 +13,6 @@ export async function getCountries() {
   return data.map((country) => ({
     name: country.name.common,
     flag: country.flags.png,
+    code: country.name.official,
   }));
 }

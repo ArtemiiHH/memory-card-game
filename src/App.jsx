@@ -93,7 +93,10 @@ function App() {
 
         {/* Load Main Game Screen */}
         {currentScreen === "game" && countriesList.length !== 0 && (
-          <Main cardsToRender={cardsToRender}></Main>
+          <Main
+            cardsToRender={cardsToRender}
+            shuffleCards={shuffleCards}
+          ></Main>
         )}
       </main>
 
