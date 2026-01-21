@@ -28,22 +28,24 @@ function App() {
 
   // Shuffle all fetched cards
   function startNewRound() {
-    const cardDeck = [...countriesList].sort(() => Math.random() - 0.5);
-    const finalDeck = cardDeck;
+    let cardDeck = [...countriesList].sort(() => Math.random() - 0.5);
 
     // Slice deck
     if (difficulty === "easy") {
-      finalDeck.slice(0, 5);
+      cardDeck = cardDeck.slice(0, 5);
     } else if (difficulty === "medium") {
-      finalDeck.slice(0, 10);
+      cardDeck = cardDeck.slice(0, 10);
     } else {
-      finalDeck.slice(0, 15);
+      cardDeck = cardDeck.slice(0, 15);
     }
 
+    let finalDeck = cardDeck;
     setCardsToRender(finalDeck);
   }
 
-  function shuffleCards() {}
+  function shuffleCards() {
+    return [...cardsToRender].sort(() => Math.random() - 0.5);
+  }
 
   // Fetch countries
   useEffect(() => {
@@ -65,11 +67,12 @@ function App() {
     }
   }, [currentScreen]); // <-- Dependency Array
 
+  // Start new round
   useEffect(() => {
     if (difficulty !== "" && countriesList.length !== 0) {
       startNewRound();
     }
-  }, [currentScreen]); // <-- Dependency Array
+  }, [difficulty, countriesList]); // <-- Dependency Array
 
   return (
     <div className="app-container">
@@ -90,10 +93,7 @@ function App() {
 
         {/* Load Main Game Screen */}
         {currentScreen === "game" && countriesList.length !== 0 && (
-          <Main
-            countriesList={countriesList}
-            cardsToRender={cardsToRender}
-          ></Main>
+          <Main cardsToRender={cardsToRender}></Main>
         )}
       </main>
 
