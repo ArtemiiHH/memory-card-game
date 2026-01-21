@@ -28,6 +28,7 @@ function App() {
 
   // Shuffle all fetched cards
   function startNewRound() {
+    // Shuffle all countries first
     let cardDeck = [...countriesList].sort(() => Math.random() - 0.5);
 
     // Slice deck
@@ -39,12 +40,15 @@ function App() {
       cardDeck = cardDeck.slice(0, 16);
     }
 
+    // Final deck
     let finalDeck = cardDeck;
     setCardsToRender(finalDeck);
   }
 
+  // Reshuffle already picked cards
   function shuffleCards() {
-    return [...cardsToRender].sort(() => Math.random() - 0.5);
+    const finalCards = [...cardsToRender].sort(() => Math.random() - 0.5);
+    setCardsToRender(finalCards);
   }
 
   // Fetch countries
