@@ -15,6 +15,7 @@ function App() {
   const [countriesList, setCountriesList] = useState([]);
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
+  const [clickedCards, setClickedCards] = useState([]);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
