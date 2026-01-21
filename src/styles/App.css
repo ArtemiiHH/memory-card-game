@@ -73,6 +73,10 @@ footer {
   font-size: 1.7rem;
 }
 
+.start-screen-modal button:hover {
+  cursor: pointer;
+}
+
 /* Card Grid */
 .card-grid {
   display: flex;

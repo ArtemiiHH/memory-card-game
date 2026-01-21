@@ -36,7 +36,7 @@ function App() {
     } else if (difficulty === "medium") {
       cardDeck = cardDeck.slice(0, 10);
     } else {
-      cardDeck = cardDeck.slice(0, 15);
+      cardDeck = cardDeck.slice(0, 16);
     }
 
     let finalDeck = cardDeck;
