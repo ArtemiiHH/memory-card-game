@@ -13,10 +13,10 @@ footer {
   backdrop-filter: blur(10px);
 }
 
-/* Game Title */
+/* Header/Game Title */
 .game-title {
   font-size: 3.5rem;
-  padding: 20px;
+  padding: 15px;
   margin: 0;
 }
 
@@ -30,7 +30,7 @@ footer {
 /* Footer Text */
 .footer-text {
   font-size: 1.3rem;
-  padding: 20px;
+  padding: 15px;
   margin: 0;
 }
 
