@@ -52,6 +52,20 @@ function App() {
     setCardsToRender(finalCards);
   }
 
+  // Get card clicks
+  function getCardClicks(cardId) {
+    // If card wasn't clicked
+    if (!clickedCards.includes(cardId)) {
+      // Remember it (Store in array)
+      setClickedCards([...clickedCards, cardId]);
+      // Shuffle again
+      shuffleCards();
+      console.log("Clicked ID:", clickedCards);
+    } else {
+      console.log("Game over!");
+    }
+  }
+
   // Fetch countries
   useEffect(() => {
     // Fetch only if current is Loading Screen
@@ -101,6 +115,7 @@ function App() {
           <Main
             cardsToRender={cardsToRender}
             shuffleCards={shuffleCards}
+            getCardClicks={getCardClicks}
           ></Main>
         )}
       </main>

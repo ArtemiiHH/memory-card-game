@@ -1,6 +1,6 @@
 import Card from "../components/Card";
 
-export default function CardGrid({ cardsToRender, shuffleCards }) {
+export default function CardGrid({ cardsToRender, getCardClicks }) {
   return (
     <div className="card-grid">
       {cardsToRender.map((card) => (
@@ -8,7 +8,7 @@ export default function CardGrid({ cardsToRender, shuffleCards }) {
           key={card.code}
           name={card.name}
           flag={card.flag}
-          shuffleCards={shuffleCards}
+          getCardClicks={() => getCardClicks(card.code)}
         ></Card>
       ))}
     </div>
