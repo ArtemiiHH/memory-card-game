@@ -5,10 +5,12 @@ import Footer from "./components/Footer";
 import StartScreen from "./screens/StartScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
+import GameOverModal from "./components/GameOverModal";
 import { getCountries } from "./data/fetchApi";
 
 // TODO:
 // REMOVE TIMER LATER IN PRODUCTION
+// FIX CARD CLICK ARRAY LATENCY (SOS)
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
