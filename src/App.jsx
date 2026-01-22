@@ -18,6 +18,8 @@ function App() {
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
+  const [gameWon, setGameWon] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
