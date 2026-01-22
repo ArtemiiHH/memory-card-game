@@ -65,6 +65,8 @@ function App() {
       // Shuffle again
       shuffleCards();
       console.log("Clicked ID:", clickedCards);
+    } else if (clickedCards.length === 4) {
+      setCurrentScreen("gameWon");
     } else {
       setCurrentScreen("gameOver");
     }
@@ -131,7 +133,9 @@ function App() {
       </div>
 
       {/* Game Over Modal */}
-      {currentScreen === "gameOver" && <GameOverModal></GameOverModal>}
+      {currentScreen === "gameOver" && (
+        <GameOverModal gameOver={gameOver}></GameOverModal>
+      )}
     </>
   );
 }

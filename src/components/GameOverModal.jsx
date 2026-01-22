@@ -1,4 +1,4 @@
-export default function GameOverModal() {
+export default function GameOverModal({ gameOver }) {
   return (
     <div className="game-over-modal">
       <div className="modal-box">
