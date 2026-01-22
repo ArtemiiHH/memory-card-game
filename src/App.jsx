@@ -96,35 +96,41 @@ function App() {
   }, [difficulty, countriesList]); // <-- Dependency Array
 
   return (
-    <div className="app-container">
-      {/* Header */}
-      <Header></Header>
+    <>
+      {/* Whole App */}
+      <div className="app-container">
+        {/* Header */}
+        <Header></Header>
 
-      {/* Main Section Screens */}
-      <main className="app-main">
-        {/* Load Start Screen */}
-        {currentScreen === "start" && (
-          <StartScreen changeScreen={changeScreen}></StartScreen>
-        )}
+        {/* Main Section Screens */}
+        <main className="app-main">
+          {/* Load Start Screen */}
+          {currentScreen === "start" && (
+            <StartScreen changeScreen={changeScreen}></StartScreen>
+          )}
 
-        {/* Load Loading Screen */}
-        {currentScreen === "loading" && !countriesList.length && (
-          <LoadingScreen></LoadingScreen>
-        )}
+          {/* Load Loading Screen */}
+          {currentScreen === "loading" && !countriesList.length && (
+            <LoadingScreen></LoadingScreen>
+          )}
 
-        {/* Load Main Game Screen */}
-        {currentScreen === "game" && countriesList.length !== 0 && (
-          <Main
-            cardsToRender={cardsToRender}
-            shuffleCards={shuffleCards}
-            getCardClicks={getCardClicks}
-          ></Main>
-        )}
-      </main>
+          {/* Load Main Game Screen */}
+          {currentScreen === "game" && countriesList.length !== 0 && (
+            <Main
+              cardsToRender={cardsToRender}
+              shuffleCards={shuffleCards}
+              getCardClicks={getCardClicks}
+            ></Main>
+          )}
+        </main>
 
-      {/* Footer */}
-      <Footer></Footer>
-    </div>
+        {/* Footer */}
+        <Footer></Footer>
+      </div>
+
+      {/* Game Over Modal */}
+      <GameOverModal></GameOverModal>
+    </>
   );
 }
 

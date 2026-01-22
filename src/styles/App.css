@@ -153,5 +153,17 @@ footer {
 }
 
 .game-over-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.modal-box {
+  background-color: white;
+  height: 300px;
+  width: 500px;
 }
