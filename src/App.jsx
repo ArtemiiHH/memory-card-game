@@ -18,8 +18,6 @@ function App() {
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
-  const [gameWon, setGameWon] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -58,13 +56,13 @@ function App() {
 
   // Get card clicks
   function getCardClicks(cardId) {
+    console.log("Clicked ID:", clickedCards);
     // If card wasn't clicked
     if (!clickedCards.includes(cardId)) {
       // Remember it (Store in array)
       setClickedCards([...clickedCards, cardId]);
       // Shuffle again
       shuffleCards();
-      console.log("Clicked ID:", clickedCards);
     } else if (clickedCards.length === 4) {
       setCurrentScreen("gameWon");
     } else {
