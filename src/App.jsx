@@ -64,7 +64,7 @@ function App() {
       shuffleCards();
       console.log("Clicked ID:", clickedCards);
     } else {
-      console.log("Game over!");
+      setCurrentScreen("gameOver");
     }
   }
 
@@ -129,7 +129,7 @@ function App() {
       </div>
 
       {/* Game Over Modal */}
-      <GameOverModal></GameOverModal>
+      {currentScreen === "gameOver" && <GameOverModal></GameOverModal>}
     </>
   );
 }
