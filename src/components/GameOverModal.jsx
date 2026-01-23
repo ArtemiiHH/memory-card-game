@@ -1,12 +1,19 @@
 export default function GameOverModal({ currentScreen }) {
   return (
+    // Modal Container
     <div className="game-over-modal">
+      {/* Modal Box */}
       <div className="modal-box">
-        <h2 className="win-lose-text">{currentScreen === "gameOver" ? "You lose!" : "You win!"}</h2>
+        {/* Win/lose Text */}
+        <h2 className="win-lose-text">
+          {currentScreen === "gameOver" ? "You lose!" : "You win!"}
+        </h2>
+        {/* Scores */}
         <div className="scores">
           <h2>Score:</h2>
           <h2>Highscore:</h2>
         </div>
+        {/* Buttons */}
         <button className="restart game-btn">Try again</button>
         <button className="quit game-btn">Quit</button>
       </div>

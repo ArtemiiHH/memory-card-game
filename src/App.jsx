@@ -107,7 +107,9 @@ function App() {
   return (
     <>
       {/* Game Over Modal */}
-      {currentScreen === "gameOver" && <GameOverModal></GameOverModal>}
+      {["gameWon", "gameOver"].includes(currentScreen) && (
+        <GameOverModal currentScreen={currentScreen}></GameOverModal>
+      )}
 
       {/* Whole App */}
       <div className="app-container">
