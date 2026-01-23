@@ -17,6 +17,7 @@ function App() {
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
+  const [counter, setCounter] = useState(0);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -64,6 +65,8 @@ function App() {
 
       // Add clicked card to array
       const updatedArray = [...previous, cardId];
+      setCounter(counter + 1);
+      console.log(counter);
 
       // If all cards are clicked = Game Won
       if (updatedArray.length === cardsToRender.length) {
@@ -135,6 +138,7 @@ function App() {
                 cardsToRender={cardsToRender}
                 shuffleCards={shuffleCards}
                 getCardClicks={getCardClicks}
+                counter={counter}
               ></Main>
             )}
         </main>
