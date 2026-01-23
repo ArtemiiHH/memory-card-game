@@ -111,7 +111,7 @@ function App() {
     <>
       {/* Game Over Modal */}
       {["gameWon", "gameOver"].includes(currentScreen) && (
-        <GameOverModal currentScreen={currentScreen}></GameOverModal>
+        <GameOverModal currentScreen={currentScreen} counter={counter}></GameOverModal>
       )}
 
       {/* Whole App */}

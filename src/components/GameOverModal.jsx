@@ -1,4 +1,4 @@
-export default function GameOverModal({ currentScreen }) {
+export default function GameOverModal({ currentScreen, counter }) {
   return (
     // Modal Container
     <div className="game-over-modal">
@@ -10,8 +10,8 @@ export default function GameOverModal({ currentScreen }) {
         </h2>
         {/* Scores */}
         <div className="scores">
-          <h2>Score:</h2>
-          <h2>Highscore:</h2>
+          <h2 className="score">Score: {counter}</h2>
+          <h2 className="score">Highscore:</h2>
         </div>
         {/* Buttons */}
         <button className="restart game-btn">Try again</button>
