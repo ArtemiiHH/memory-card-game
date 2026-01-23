@@ -64,7 +64,6 @@ function App() {
 
       // Add clicked card to array
       const updatedArray = [...previous, cardId];
-      console.log(updatedArray); // <-- REMOVE LATER
 
       // If all cards are clicked = Game Won
       if (updatedArray.length === cardsToRender.length) {
@@ -139,9 +138,10 @@ function App() {
       </div>
 
       {/* Game Over Modal */}
-      {currentScreen === "gameOver" && (
-        <GameOverModal gameOver={gameOver}></GameOverModal>
-      )}
+      {currentScreen === "gameOver" ||
+        (currentScreen === "gameWon" && (
+          <GameOverModal gameOver={gameOver}></GameOverModal>
+        ))}
     </>
   );
 }
