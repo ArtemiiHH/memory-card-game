@@ -10,7 +10,6 @@ import { getCountries } from "./data/fetchApi";
 
 // TODO:
 // REMOVE TIMER LATER IN PRODUCTION
-// FIX CARD CLICK ARRAY LATENCY (SOS)
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState("start");
@@ -56,18 +55,27 @@ function App() {
 
   // Get card clicks
   function getCardClicks(cardId) {
-    console.log("Clicked ID:", clickedCards);
-    // If card wasn't clicked
-    if (!clickedCards.includes(cardId)) {
-      // Remember it (Store in array)
-      setClickedCards([...clickedCards, cardId]);
-      // Shuffle again
+    setClickedCards((previous) => {
+      // If click is duplicate = Game Over
+      if (previous.includes(cardId)) {
+        setCurrentScreen("gameOver");
+        return previous;
+      }
+
+      // Add clicked card to array
+      const updatedArray = [...previous, cardId];
+      console.log(updatedArray); // <-- REMOVE LATER
+
+      // If all cards are clicked = Game Won
+      if (updatedArray.length === cardsToRender.length) {
+        setCurrentScreen("gameWon");
+        return updatedArray;
+      }
+
+      // Continue Game
       shuffleCards();
-    } else if (clickedCards.length === 4) {
-      setCurrentScreen("gameWon");
-    } else {
-      setCurrentScreen("gameOver");
-    }
+      return updatedArray;
+    });
   }
 
   // Fetch countries
