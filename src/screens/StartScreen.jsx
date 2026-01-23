@@ -6,9 +6,18 @@ export default function StartScreen({ changeScreen }) {
       <h2 className="start-screen-text">Select difficulty level:</h2>
 
       {/* Start Screen Buttons */}
-      <button onClick={() => changeScreen("easy")}>Easy</button>
-      <button onClick={() => changeScreen("medium")}>Medium</button>
-      <button onClick={() => changeScreen("hard")}>Hard</button>
+      <button className="easy game-btn" onClick={() => changeScreen("easy")}>
+        Easy
+      </button>
+      <button
+        className="medium game-btn"
+        onClick={() => changeScreen("medium")}
+      >
+        Medium
+      </button>
+      <button className="hard game-btn" onClick={() => changeScreen("hard")}>
+        Hard
+      </button>
     </div>
   );
 }

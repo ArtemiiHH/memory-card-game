@@ -6,6 +6,12 @@ body {
   font-family: "Jersey 10", sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
 /* Header/Footer */
 header,
 footer {
@@ -66,14 +72,14 @@ footer {
 }
 
 /* Start Screen Buttons */
-.start-screen-modal button {
+.game-btn {
   padding: 20px 80px;
   border: 1px solid black;
   font-family: "Jersey 10", sans-serif;
   font-size: 1.7rem;
 }
 
-.start-screen-modal button:hover {
+.game-btn:hover {
   cursor: pointer;
 }
 
@@ -167,9 +173,17 @@ footer {
 /* Modal Box */
 .modal-box {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
-  height: 300px;
-  width: 500px;
+  height: auto;
+  width: auto;
+  gap: 20px;
+  padding: 40px;
+}
+
+.scores {
+  display: flex;
+  gap: 50px;
 }
