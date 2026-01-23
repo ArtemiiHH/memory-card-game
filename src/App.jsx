@@ -138,8 +138,9 @@ function App() {
       </div>
 
       {/* Game Over Modal */}
-      {currentScreen === "gameOver" ||
-        (currentScreen === "gameWon" && <GameOverModal></GameOverModal>)}
+      {currentScreen === "gameOver" && (
+        <GameOverModal currentScreen={currentScreen}></GameOverModal>
+      )}
     </>
   );
 }
