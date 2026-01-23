@@ -127,13 +127,14 @@ function App() {
           )}
 
           {/* Load Main Game Screen */}
-          {currentScreen === "game" && countriesList.length !== 0 && (
-            <Main
-              cardsToRender={cardsToRender}
-              shuffleCards={shuffleCards}
-              getCardClicks={getCardClicks}
-            ></Main>
-          )}
+          {["game", "gameWon", "gameOver"].includes(currentScreen) &&
+            countriesList.length !== 0 && (
+              <Main
+                cardsToRender={cardsToRender}
+                shuffleCards={shuffleCards}
+                getCardClicks={getCardClicks}
+              ></Main>
+            )}
         </main>
 
         {/* Footer */}
