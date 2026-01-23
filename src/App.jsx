@@ -106,6 +106,9 @@ function App() {
 
   return (
     <>
+      {/* Game Over Modal */}
+      {currentScreen === "gameOver" && <GameOverModal></GameOverModal>}
+
       {/* Whole App */}
       <div className="app-container">
         {/* Header */}
@@ -136,11 +139,6 @@ function App() {
         {/* Footer */}
         <Footer></Footer>
       </div>
-
-      {/* Game Over Modal */}
-      {currentScreen === "gameOver" && (
-        <GameOverModal currentScreen={currentScreen}></GameOverModal>
-      )}
     </>
   );
 }
