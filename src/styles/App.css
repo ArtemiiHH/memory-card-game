@@ -52,7 +52,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 0;
 }
 
 /* Start Screen Modal */
@@ -160,7 +159,6 @@ footer {
   background-color: black;
   height: 100vh;
   width: 100%;
-  z-index: 1;
 }
 
 .modal-box {
