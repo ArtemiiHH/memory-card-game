@@ -154,6 +154,7 @@ function App() {
                 shuffleCards={shuffleCards}
                 handleScore={handleScore}
                 score={score}
+                highScore={highScore}
               ></Main>
             )}
         </main>

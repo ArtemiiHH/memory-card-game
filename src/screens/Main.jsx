@@ -6,11 +6,13 @@ export default function Main({
   shuffleCards,
   handleScore,
   score,
+  highScore,
 }) {
   return (
     <>
       <ScoreBoard
         score={score}
+        highScore={highScore}
         cardsToRender={cardsToRender.length}
       ></ScoreBoard>
       <CardGrid
