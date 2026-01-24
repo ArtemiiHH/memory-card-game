@@ -26,6 +26,12 @@ footer {
   margin: 0;
 }
 
+/* Title Link */
+header a {
+  text-decoration: none;
+  color: black;
+}
+
 /* Start Screen Text */
 .start-screen-text {
   font-size: 2.3rem;
@@ -171,8 +177,8 @@ footer {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   border: 5px solid white;
-  height: auto;
-  width: 120px;
+  height: 200px;
+  width: 130px;
   padding: 30px;
 }
 
@@ -246,6 +252,7 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: white;
+  border: 5px solid black;
   border-radius: 20px;
   height: auto;
   width: auto;
