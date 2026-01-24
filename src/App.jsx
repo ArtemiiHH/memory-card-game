@@ -18,7 +18,7 @@ function App() {
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -55,7 +55,7 @@ function App() {
     setCardsToRender(finalCards);
   }
 
-  // Get card clicks
+  // Get card clicks/handle score
   function handleScore(cardId) {
     setClickedCards((previous) => {
       // If click is duplicate = Game Over
@@ -108,6 +108,16 @@ function App() {
     }
   }, [difficulty, countriesList]); // <-- Dependency Array
 
+  // Handle High Score
+  useEffect(() => {
+    if (currentScreen === "gameWon" || currentScreen === "gameOver") {
+      if (score > highScore) {
+        setHighScore(score);
+        localStorage.setItem("highScore", score);
+      }
+    }
+  }, [currentScreen, score, highScore]);
+
   return (
     <>
       {/* Game Over Modal */}
@@ -115,6 +125,7 @@ function App() {
         <GameOverModal
           currentScreen={currentScreen}
           score={score}
+          highScore={highScore}
         ></GameOverModal>
       )}
 
