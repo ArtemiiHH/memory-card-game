@@ -81,8 +81,6 @@ function App() {
     });
   }
 
-  function handleHighScore() {}
-
   // Fetch countries
   useEffect(() => {
     // Fetch only if current is Loading Screen
