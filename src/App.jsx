@@ -56,7 +56,7 @@ function App() {
   }
 
   // Get card clicks
-  function getCardClicks(cardId) {
+  function handleScore(cardId) {
     setClickedCards((previous) => {
       // If click is duplicate = Game Over
       if (previous.includes(cardId)) {
@@ -80,6 +80,8 @@ function App() {
       return updatedArray;
     });
   }
+
+  function handleHighScore() {}
 
   // Fetch countries
   useEffect(() => {
@@ -141,7 +143,7 @@ function App() {
               <Main
                 cardsToRender={cardsToRender}
                 shuffleCards={shuffleCards}
-                getCardClicks={getCardClicks}
+                handleScore={handleScore}
                 score={score}
               ></Main>
             )}

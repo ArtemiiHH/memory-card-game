@@ -4,7 +4,7 @@ import ScoreBoard from "../components/ScoreBoard";
 export default function Main({
   cardsToRender,
   shuffleCards,
-  getCardClicks,
+  handleScore,
   score,
 }) {
   return (
@@ -16,7 +16,7 @@ export default function Main({
       <CardGrid
         cardsToRender={cardsToRender}
         shuffleCards={shuffleCards}
-        getCardClicks={getCardClicks}
+        handleScore={handleScore}
       ></CardGrid>
     </>
   );
