@@ -202,13 +202,23 @@ footer {
   backdrop-filter: blur(10px);
 }
 
+.scores {
+  display: flex;
+  gap: 50px;
+}
+
+.high-score,
+.score {
+  font-size: 2rem;
+}
+
 /* Score Board Text */
 .score-board h2 {
   font-size: 2.2rem;
 }
 
 /* High Score Group*/
-.high-score {
+.high-score-group {
   display: flex;
   align-items: center;
 }
