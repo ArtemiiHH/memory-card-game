@@ -189,11 +189,18 @@ footer {
   font-size: 4rem;
 }
 
-.scores {
+/* Score Board */
+.score-board {
   display: flex;
-  gap: 50px;
+  gap: 100px;
+  padding: 10px 60px;
+  border: 5px solid white;
+  border-radius: 20px;
+  margin: 20px;
+  backdrop-filter: blur(10px);
 }
 
-.score {
+/* Score Board Text */
+.score-board > * {
   font-size: 2.2rem;
 }
