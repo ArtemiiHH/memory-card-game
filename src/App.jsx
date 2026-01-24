@@ -67,7 +67,6 @@ function App() {
       // Add clicked card to array
       const updatedArray = [...previous, cardId];
       setScore(score + 1);
-      console.log(score);
 
       // If all cards are clicked = Game Won
       if (updatedArray.length === cardsToRender.length) {
@@ -79,6 +78,18 @@ function App() {
       shuffleCards();
       return updatedArray;
     });
+  }
+
+  // Restart Game
+  function restartGame() {
+    // Clear clicked cards list
+    setClickedCards([]);
+    // Set score to 0
+    setScore(0);
+    // Clear cards to render list
+    setCardsToRender([]);
+    // Set current screen to Loading
+    setCurrentScreen("loading");
   }
 
   // Fetch countries
@@ -126,6 +137,7 @@ function App() {
           currentScreen={currentScreen}
           score={score}
           highScore={highScore}
+          restartGame={restartGame}
         ></GameOverModal>
       )}
 
