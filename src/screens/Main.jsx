@@ -9,7 +9,7 @@ export default function Main({
 }) {
   return (
     <>
-      <ScoreBoard></ScoreBoard>
+      <ScoreBoard counter={counter} cardsToRender={cardsToRender.length}></ScoreBoard>
       <CardGrid
         cardsToRender={cardsToRender}
         shuffleCards={shuffleCards}
