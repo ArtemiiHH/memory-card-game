@@ -221,9 +221,10 @@ footer {
 .high-score-group {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 /* Cup Emoji */
-.high-score .cup-emoji {
-  font-size: 1.8rem;
+span.cup-emoji {
+  font-size: 1.7rem;
 }

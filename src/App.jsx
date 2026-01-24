@@ -18,7 +18,10 @@ function App() {
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
   const [score, setScore] = useState(0);
-  const [highScore, setHighScore] = useState(localStorage.getItem("highScore"));
+  const [highScore, setHighScore] = useState(() => {
+    const saved = localStorage.getItem("highScore");
+    return saved ? Number(saved) : 0;
+  });
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -82,14 +85,14 @@ function App() {
 
   // Restart Game
   function restartGame() {
+    // Set current screen to Loading
+    setCurrentScreen("loading");
     // Clear clicked cards list
     setClickedCards([]);
     // Set score to 0
     setScore(0);
     // Clear cards to render list
     setCardsToRender([]);
-    // Set current screen to Loading
-    setCurrentScreen("loading");
   }
 
   // Fetch countries
