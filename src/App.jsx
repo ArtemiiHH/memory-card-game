@@ -17,7 +17,7 @@ function App() {
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
-  const [score, setScore] = useState(0);
+  const score = clickedCards.length;
   const [highScore, setHighScore] = useState(() => {
     const saved = localStorage.getItem("highScore");
     return saved ? Number(saved) : 0;
@@ -69,7 +69,6 @@ function App() {
 
       // Add clicked card to array
       const updatedArray = [...previous, cardId];
-      setScore(score + 1);
 
       // If all cards are clicked = Game Won
       if (updatedArray.length === cardsToRender.length) {
@@ -89,8 +88,18 @@ function App() {
     setCurrentScreen("loading");
     // Clear clicked cards list
     setClickedCards([]);
-    // Set score to 0
-    setScore(0);
+    // Clear cards to render list
+    setCardsToRender([]);
+  }
+
+  // Quit Game
+  function quitGame() {
+    // Set current screen to Start
+    setCurrentScreen("start");
+    // Reset difficulty
+    setDifficulty("");
+    // Clear clicked cards list
+    setClickedCards([]);
     // Clear cards to render list
     setCardsToRender([]);
   }
@@ -141,6 +150,7 @@ function App() {
           score={score}
           highScore={highScore}
           restartGame={restartGame}
+          quitGame={quitGame}
         ></GameOverModal>
       )}
 
@@ -157,9 +167,7 @@ function App() {
           )}
 
           {/* Load Loading Screen */}
-          {currentScreen === "loading" && !countriesList.length && (
-            <LoadingScreen></LoadingScreen>
-          )}
+          {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
 
           {/* Load Main Game Screen */}
           {["game", "gameWon", "gameOver"].includes(currentScreen) &&
