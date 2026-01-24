@@ -192,6 +192,8 @@ footer {
 /* Score Board */
 .score-board {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 100px;
   padding: 10px 60px;
   border: 5px solid white;
@@ -201,6 +203,17 @@ footer {
 }
 
 /* Score Board Text */
-.score-board > * {
+.score-board h2 {
   font-size: 2.2rem;
+}
+
+/* High Score Group*/
+.high-score {
+  display: flex;
+  align-items: center;
+}
+
+/* Cup Emoji */
+.high-score .cup-emoji {
+  font-size: 1.8rem;
 }

@@ -1,12 +1,13 @@
 export default function ScoreBoard({ cardsToRender, score, highScore }) {
   return (
     <div className="score-board">
-      <h2 className="score">
+      <h2 className="score-text">
         Score: {score} / {cardsToRender}
       </h2>
-      <h2 className="high-score">
-        🏆 High score: {highScore}
-      </h2>
+      <div className="high-score">
+        <span className="cup-emoji">🏆 </span>
+        <h2 className="high-score-text">High score: {highScore}</h2>
+      </div>
     </div>
   );
 }
