@@ -17,7 +17,8 @@ function App() {
   const [difficulty, setDifficulty] = useState("");
   const [cardsToRender, setCardsToRender] = useState([]);
   const [clickedCards, setClickedCards] = useState([]);
-  const [counter, setCounter] = useState(0);
+  const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
 
   // Change screen from Start to Loading
   function changeScreen(value) {
@@ -65,8 +66,8 @@ function App() {
 
       // Add clicked card to array
       const updatedArray = [...previous, cardId];
-      setCounter(counter + 1);
-      console.log(counter);
+      setScore(score + 1);
+      console.log(score);
 
       // If all cards are clicked = Game Won
       if (updatedArray.length === cardsToRender.length) {
@@ -111,7 +112,10 @@ function App() {
     <>
       {/* Game Over Modal */}
       {["gameWon", "gameOver"].includes(currentScreen) && (
-        <GameOverModal currentScreen={currentScreen} counter={counter}></GameOverModal>
+        <GameOverModal
+          currentScreen={currentScreen}
+          score={score}
+        ></GameOverModal>
       )}
 
       {/* Whole App */}
@@ -138,7 +142,7 @@ function App() {
                 cardsToRender={cardsToRender}
                 shuffleCards={shuffleCards}
                 getCardClicks={getCardClicks}
-                counter={counter}
+                score={score}
               ></Main>
             )}
         </main>

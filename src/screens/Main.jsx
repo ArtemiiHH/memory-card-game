@@ -5,11 +5,14 @@ export default function Main({
   cardsToRender,
   shuffleCards,
   getCardClicks,
-  counter,
+  score,
 }) {
   return (
     <>
-      <ScoreBoard counter={counter} cardsToRender={cardsToRender.length}></ScoreBoard>
+      <ScoreBoard
+        score={score}
+        cardsToRender={cardsToRender.length}
+      ></ScoreBoard>
       <CardGrid
         cardsToRender={cardsToRender}
         shuffleCards={shuffleCards}

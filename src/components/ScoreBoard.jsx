@@ -1,10 +1,10 @@
-export default function ScoreBoard({ cardsToRender, counter }) {
+export default function ScoreBoard({ cardsToRender, score }) {
   return (
     <div className="score-board">
       <h2>
-        Score: {counter} / {cardsToRender}
+        Score: {score} / {cardsToRender}
       </h2>
-      <h2>Highscore: </h2>
+      <h2>High score: </h2>
     </div>
   );
 }
