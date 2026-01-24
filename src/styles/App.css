@@ -40,6 +40,17 @@ footer {
   margin: 0;
 }
 
+/* Name Link */
+.footer-text a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
 /* Whole App Container */
 .app-container {
   min-height: 100vh;
@@ -68,20 +79,76 @@ footer {
   text-align: center;
   gap: 20px;
   backdrop-filter: blur(10px);
-  padding: 50px;
+  padding: 40px;
   border-radius: 20px;
+  border: 5px solid white;
 }
 
 /* Start Screen Buttons */
 .game-btn {
-  padding: 20px 80px;
-  border: 1px solid black;
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #5adaff 0,
+    #5468ff 100%
+  );
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #4c59bf 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
   font-family: "Jersey 10", sans-serif;
-  font-size: 1.7rem;
+  font-size: 2.2rem;
+  height: 70px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+.game-btn:focus {
+  box-shadow:
+    #d6d6e7 0 0 0 1.5px inset,
+    rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #d6d6e7 0 -3px 0 inset;
 }
 
 .game-btn:hover {
-  cursor: pointer;
+  box-shadow:
+    rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+    #4c59bf 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.game-btn:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.restart.game-btn,
+.quit.game-btn {
+  width: 100%;
 }
 
 /* Card Grid */
@@ -103,7 +170,8 @@ footer {
   text-align: center;
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  height: 180px;
+  border: 5px solid white;
+  height: auto;
   width: 120px;
   padding: 30px;
 }
@@ -181,7 +249,7 @@ footer {
   border-radius: 20px;
   height: auto;
   width: auto;
-  gap: 20px;
+  gap: 30px;
   padding: 50px;
 }
 
@@ -224,7 +292,13 @@ footer {
   gap: 10px;
 }
 
+/* Emojis */
 /* Cup Emoji */
-span.cup-emoji {
+.cup-emoji {
   font-size: 1.7rem;
+}
+
+/* Globe Emoji */
+.globe-emoji {
+  font-size: 2.2rem;
 }
