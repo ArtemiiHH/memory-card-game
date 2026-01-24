@@ -1,4 +1,5 @@
 import CardGrid from "../components/CardGrid";
+import ScoreBoard from "../components/ScoreBoard";
 
 export default function Main({
   cardsToRender,
@@ -8,7 +9,7 @@ export default function Main({
 }) {
   return (
     <>
-      <h2 className="score-counter">{counter}/5</h2>
+      <ScoreBoard></ScoreBoard>
       <CardGrid
         cardsToRender={cardsToRender}
         shuffleCards={shuffleCards}
