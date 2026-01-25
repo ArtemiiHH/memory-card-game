@@ -4,6 +4,7 @@ export default function GameOverModal({
   highScore,
   restartGame,
   quitGame,
+  playSoundEffect,
 }) {
   return (
     // Modal Container
@@ -20,10 +21,22 @@ export default function GameOverModal({
           <h2 className="high-score">High score: {highScore}</h2>
         </div>
         {/* Buttons */}
-        <button className="restart game-btn" onClick={restartGame}>
+        <button
+          className="restart game-btn"
+          onClick={() => {
+            playSoundEffect("click");
+            restartGame();
+          }}
+        >
           Try again
         </button>
-        <button className="quit game-btn" onClick={quitGame}>
+        <button
+          className="quit game-btn"
+          onClick={() => {
+            playSoundEffect("click");
+            quitGame();
+          }}
+        >
           Quit
         </button>
       </div>

@@ -12,6 +12,7 @@ import { getCountries } from "./data/fetchApi";
 // Sound Effects
 import backgroundMusic from "./assets/sound/background-music.mp3";
 import flipSound from "./assets/sound/card-flip.mp3";
+import clickSound from "./assets/sound/click.mp3";
 
 // TODO:
 // REMOVE TIMER LATER IN PRODUCTION
@@ -27,7 +28,7 @@ function App() {
     const saved = localStorage.getItem("highScore");
     return saved ? Number(saved) : 0;
   });
-  // Sound Effects
+  // Music
   const [muted, setMuted] = useState(false);
   const music = useState(() => {
     const audio = new Audio(backgroundMusic);
@@ -35,8 +36,10 @@ function App() {
     audio.volume = 0.4;
     return audio;
   })[0];
+  // Sound Effects
   const soundEffects = useState(() => ({
     flip: new Audio(flipSound),
+    click: new Audio(clickSound),
   }))[0];
 
   // Start Music
@@ -46,12 +49,7 @@ function App() {
     }
   }
 
-  // Stop Music
-  function stopMusic() {
-    music.pause();
-  }
-
-  // Play SFX
+  // Play Sound Effects
   function playSoundEffect(name) {
     if (muted) return;
     const sound = soundEffects[name];
@@ -178,13 +176,6 @@ function App() {
     }
   }, [currentScreen, score, highScore]);
 
-  // Stop music if Game Over or Game Won
-  // useEffect(() => {
-  //   if (currentScreen === "gameWon" || currentScreen === "gameOver") {
-  //     stopMusic();
-  //   }
-  // }, [currentScreen]);
-
   return (
     <>
       {/* Game Over Modal */}
@@ -195,6 +186,7 @@ function App() {
           highScore={highScore}
           restartGame={restartGame}
           quitGame={quitGame}
+          playSoundEffect={playSoundEffect}
         ></GameOverModal>
       )}
 
@@ -214,7 +206,10 @@ function App() {
           <div className="main-content">
             {/* Load Start Screen */}
             {currentScreen === "start" && (
-              <StartScreen changeScreen={changeScreen}></StartScreen>
+              <StartScreen
+                changeScreen={changeScreen}
+                playSoundEffect={playSoundEffect}
+              ></StartScreen>
             )}
 
             {/* Load Loading Screen */}
