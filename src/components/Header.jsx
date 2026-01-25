@@ -1,3 +1,5 @@
+import useSound from "../hooks/useSound";
+
 export default function Header() {
   return (
     <header>
