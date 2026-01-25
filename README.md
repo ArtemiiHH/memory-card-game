@@ -1,16 +1,66 @@
-# React + Vite
+# 🌍 Geography Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Demo:** https://your-live-demo-link-here.com  
+_(Replace this link with your real deployment URL)_
 
-Currently, two official plugins are available:
+A fun and interactive **memory card game** built with **React**, where players test their memory by clicking each country card only once. Each round shuffles the cards, increasing the challenge as you go.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎮 How to Play
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Choose a difficulty level (Easy / Medium / Hard)
+2. Click on a card to score a point
+3. **Do not click the same card twice**
+4. After each click, the cards shuffle
+5. Win by clicking all cards without repeating
+6. Lose if you click a card you've already chosen
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧠 Features
+
+- 🃏 Card flip animation with front & back sides
+- 🔀 Card shuffle after each successful click
+- 🎵 Background music & sound effects
+- 🔇 Global mute toggle
+- 🏆 High score saved using `localStorage`
+- 📱 Responsive layout
+- ⏳ Loading screen for better UX
+
+---
+
+## 🎚 Difficulty Levels
+
+| Difficulty | Number of Cards |
+| ---------- | --------------- |
+| Easy       | 5               |
+| Medium     | 10              |
+| Hard       | 16              |
+
+---
+
+## 🔊 Audio
+
+The game includes:
+
+- Background music (loops during gameplay)
+- Card flip sound
+- Button click sound
+- Win / Lose sounds
+
+> Audio respects browser autoplay rules and starts after the first user interaction.
+
+---
+
+## 🛠 Built With
+
+- **React**
+- **JavaScript (ES6+)**
+- **CSS (custom animations & styling)**
+- **REST Countries API**
+- **HTML5 Audio API**
+
+---
+
+## 📁 Project Structure (simplified)
