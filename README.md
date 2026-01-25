@@ -1,7 +1,6 @@
 # 🌍 Geography Memory Game
 
-🔗 **Live Demo:** https://your-live-demo-link-here.com  
-_(Replace this link with your real deployment URL)_
+🔗 **Live Demo:** https://geography-memo-game.netlify.app/
 
 A fun and interactive **memory card game** built with **React**, where players test their memory by clicking each country card only once. Each round shuffles the cards, increasing the challenge as you go.
 
@@ -48,7 +47,7 @@ Game includes:
 - Card flip sound
 - Button click sound
 
-> *Audio respects browser autoplay rules and starts after the first user interaction.*
+> _Audio respects browser autoplay rules and starts after the first user interaction._
 
 ---
 
