@@ -48,14 +48,26 @@ Game includes:
 - Card flip sound
 - Button click sound
 
-> Audio respects browser autoplay rules and starts after the first user interaction.
+> *Audio respects browser autoplay rules and starts after the first user interaction.*
 
 ---
 
 ## 🛠 Built With
 
 - **React**
-- **JavaScript (ES6+)**
-- **CSS (custom animations & styling)**
 - **REST Countries API**
-- **HTML5 Audio API**
+- **JavaScript (ES6+)**
+- **CSS**
+- **HTML5**
+
+---
+
+## ⚠️ Disclaimer
+
+This project uses data provided by the **REST Countries API**  
+🔗 https://restcountries.com/
+
+All country names, flags, and related data belong to their respective sources.  
+This project is for **educational and portfolio purposes only**.
+
+The live demo link above is provided for showcasing the project and may be updated or replaced at any time.
