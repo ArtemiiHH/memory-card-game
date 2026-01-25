@@ -1,12 +1,18 @@
 import { useState } from "react";
 import Card from "../components/Card";
 
-export default function CardGrid({ cardsToRender, handleScore }) {
+export default function CardGrid({
+  cardsToRender,
+  handleScore,
+  playSoundEffect,
+}) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isLocked, setIsLocked] = useState(false);
 
   function handleCardClick(cardId) {
     if (isLocked) return;
+
+    playSoundEffect("flip");
 
     setIsLocked(true);
     setIsFlipped(true);
@@ -14,13 +20,13 @@ export default function CardGrid({ cardsToRender, handleScore }) {
     // Flip back after first flip
     setTimeout(() => {
       setIsFlipped(false);
-    }, 600);
+    }, 400);
 
     // Handle score + shuffle AFTER animation
     setTimeout(() => {
       handleScore(cardId);
       setIsLocked(false);
-    }, 400);
+    }, 800);
   }
 
   return (

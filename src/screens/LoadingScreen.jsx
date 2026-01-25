@@ -1,4 +1,4 @@
-import globeImage from "../assets/globe.svg";
+import globeImage from "../assets/images/globe.svg";
 
 export default function LoadingScreen() {
   return (

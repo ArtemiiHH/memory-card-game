@@ -7,7 +7,11 @@ import StartScreen from "./screens/StartScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
 import GameOverModal from "./components/GameOverModal";
+// API
 import { getCountries } from "./data/fetchApi";
+// Sound Effects
+import backgroundMusic from "./assets/sound/background-music.mp3";
+import flipSound from "./assets/sound/card-flip.mp3";
 
 // TODO:
 // REMOVE TIMER LATER IN PRODUCTION
@@ -23,11 +27,43 @@ function App() {
     const saved = localStorage.getItem("highScore");
     return saved ? Number(saved) : 0;
   });
+  // Sound Effects
+  const [muted, setMuted] = useState(false);
+  const music = useState(() => {
+    const audio = new Audio(backgroundMusic);
+    audio.loop = true;
+    audio.volume = 0.4;
+    return audio;
+  })[0];
+  const soundEffects = useState(() => ({
+    flip: new Audio(flipSound),
+  }))[0];
+
+  // Start Music
+  function startMusic() {
+    if (!muted) {
+      music.play().catch(() => {});
+    }
+  }
+
+  // Stop Music
+  function stopMusic() {
+    music.pause();
+  }
+
+  // Play SFX
+  function playSoundEffect(name) {
+    if (muted) return;
+    const sound = soundEffects[name];
+    sound.currentTime = 0;
+    sound.play();
+  }
 
   // Change screen from Start to Loading
   function changeScreen(value) {
     if (currentScreen === "start") {
       setCurrentScreen("loading");
+      startMusic();
     }
 
     // Store difficulty value
@@ -142,6 +178,13 @@ function App() {
     }
   }, [currentScreen, score, highScore]);
 
+  // Stop music if Game Over or Game Won
+  useEffect(() => {
+    if (currentScreen === "gameWon" || currentScreen === "gameOver") {
+      stopMusic();
+    }
+  }, [currentScreen]);
+
   return (
     <>
       {/* Game Over Modal */}
@@ -158,7 +201,7 @@ function App() {
       {/* Whole App */}
       <div className="app-container">
         {/* Header */}
-        <Header></Header>
+        <Header music={music} muted={muted} setMuted={setMuted}></Header>
 
         {/* Main Section Screens */}
         <main className="app-main">
@@ -186,6 +229,7 @@ function App() {
                   handleScore={handleScore}
                   score={score}
                   highScore={highScore}
+                  playSoundEffect={playSoundEffect}
                 ></Main>
               )}
           </div>
