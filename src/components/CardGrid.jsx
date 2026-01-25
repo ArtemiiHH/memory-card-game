@@ -20,13 +20,13 @@ export default function CardGrid({
     // Flip back after first flip
     setTimeout(() => {
       setIsFlipped(false);
-    }, 400);
+    }, 800);
 
     // Handle score + shuffle AFTER animation
     setTimeout(() => {
       handleScore(cardId);
       setIsLocked(false);
-    }, 800);
+    }, 400);
   }
 
   return (

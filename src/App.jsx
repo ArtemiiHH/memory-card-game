@@ -179,11 +179,11 @@ function App() {
   }, [currentScreen, score, highScore]);
 
   // Stop music if Game Over or Game Won
-  useEffect(() => {
-    if (currentScreen === "gameWon" || currentScreen === "gameOver") {
-      stopMusic();
-    }
-  }, [currentScreen]);
+  // useEffect(() => {
+  //   if (currentScreen === "gameWon" || currentScreen === "gameOver") {
+  //     stopMusic();
+  //   }
+  // }, [currentScreen]);
 
   return (
     <>
