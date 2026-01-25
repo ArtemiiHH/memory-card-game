@@ -175,17 +175,48 @@ header a {
 
 /* Card */
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  backdrop-filter: blur(20px);
+  position: relative;
+  width: 130px;
+  height: 150px;
+  padding: 30px;
   border-radius: 20px;
   border: 5px solid black;
-  height: 150px;
-  width: 130px;
+  background-color: transparent;
+
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+/* Flip state */
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 15px;
+  backface-visibility: hidden;
+}
+
+/* Front */
+.card-front {
+  background-color: white;
   padding: 30px;
+}
+
+/* Back */
+.card-back {
+  background-color: #53b9c5;
+  font-size: 5rem;
+  transform: rotateY(180deg);
 }
 
 .card:hover {
@@ -201,9 +232,10 @@ header a {
 /* Country Name */
 .country-name {
   margin: 0;
-  padding: 20px;
+  padding: 20px 0;
   font-size: 1.5rem;
   line-height: 0.75;
+  text-align: center;
 }
 
 /* Loading Screen */
@@ -275,9 +307,8 @@ header a {
 /* Score Board */
 .score-board {
   display: flex;
-  top: 80px;
-  gap: 100px;
-  padding: 10px 60px;
+  gap: 10px;
+  padding: 10px 20px;
   border: 5px solid black;
   border-radius: 20px;
   margin: 20px;
