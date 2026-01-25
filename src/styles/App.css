@@ -180,9 +180,9 @@ header a {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
-  border: 5px solid white;
+  border: 5px solid black;
   height: 150px;
   width: 130px;
   padding: 30px;
@@ -275,16 +275,13 @@ header a {
 /* Score Board */
 .score-board {
   display: flex;
-  /* justify-content: center;
-  align-items: center; */
-  /* position: sticky; */
   top: 80px;
   gap: 100px;
   padding: 10px 60px;
-  border: 5px solid white;
+  border: 5px solid black;
   border-radius: 20px;
   margin: 20px;
-  backdrop-filter: blur(10px);
+  background-color: white;
 }
 
 .scores {
