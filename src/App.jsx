@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles/App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScoreBoard from "./components/ScoreBoard";
 import StartScreen from "./screens/StartScreen";
 import LoadingScreen from "./screens/LoadingScreen";
 import Main from "./screens/Main";
@@ -161,25 +162,33 @@ function App() {
 
         {/* Main Section Screens */}
         <main className="app-main">
-          {/* Load Start Screen */}
-          {currentScreen === "start" && (
-            <StartScreen changeScreen={changeScreen}></StartScreen>
-          )}
+          <ScoreBoard
+            score={score}
+            highScore={highScore}
+            cardsToRender={cardsToRender.length}
+          ></ScoreBoard>
 
-          {/* Load Loading Screen */}
-          {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
-
-          {/* Load Main Game Screen */}
-          {["game", "gameWon", "gameOver"].includes(currentScreen) &&
-            countriesList.length !== 0 && (
-              <Main
-                cardsToRender={cardsToRender}
-                shuffleCards={shuffleCards}
-                handleScore={handleScore}
-                score={score}
-                highScore={highScore}
-              ></Main>
+          <div className="main-content">
+            {/* Load Start Screen */}
+            {currentScreen === "start" && (
+              <StartScreen changeScreen={changeScreen}></StartScreen>
             )}
+
+            {/* Load Loading Screen */}
+            {currentScreen === "loading" && <LoadingScreen></LoadingScreen>}
+
+            {/* Load Main Game Screen */}
+            {["game", "gameWon", "gameOver"].includes(currentScreen) &&
+              countriesList.length !== 0 && (
+                <Main
+                  cardsToRender={cardsToRender}
+                  shuffleCards={shuffleCards}
+                  handleScore={handleScore}
+                  score={score}
+                  highScore={highScore}
+                ></Main>
+              )}
+          </div>
         </main>
 
         {/* Footer */}
