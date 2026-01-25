@@ -20,13 +20,13 @@ A fun and interactive **memory card game** built with **React**, where players t
 
 ## 🧠 Features
 
-- 🃏 Card flip animation with front & back sides
-- 🔀 Card shuffle after each successful click
-- 🎵 Background music & sound effects
-- 🔇 Global mute toggle
-- 🏆 High score saved using `localStorage`
-- 📱 Responsive layout
-- ⏳ Loading screen for better UX
+- Card flip animation
+- Card shuffle after each successful click
+- Background music & sound effects
+- Global game mute
+- High score saved using `localStorage`
+- Responsive layout
+- Loading screen for better UX
 
 ---
 
@@ -42,12 +42,11 @@ A fun and interactive **memory card game** built with **React**, where players t
 
 ## 🔊 Audio
 
-The game includes:
+Game includes:
 
 - Background music (loops during gameplay)
 - Card flip sound
 - Button click sound
-- Win / Lose sounds
 
 > Audio respects browser autoplay rules and starts after the first user interaction.
 
@@ -60,7 +59,3 @@ The game includes:
 - **CSS (custom animations & styling)**
 - **REST Countries API**
 - **HTML5 Audio API**
-
----
-
-## 📁 Project Structure (simplified)
