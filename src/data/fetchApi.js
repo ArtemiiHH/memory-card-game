@@ -5,5 +5,7 @@ import countries from "./countries.json";
 // requires an account + API key, which isn't viable for a static client-side
 // app, so flags are served from flagcdn.com instead.
 export async function getCountries() {
-  return countries;
+  // Return a new array reference each call so React's state update isn't
+  // bailed out on restart, when countriesList is set to the same data again.
+  return [...countries];
 }
